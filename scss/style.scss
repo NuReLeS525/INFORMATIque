@@ -16,7 +16,13 @@ body {
   width: 100%;
 }
 
-h1, h2 {
+iframe {
+  display: block;
+  margin: 0 auto;
+}
+
+h1,
+h2 {
   text-align: center;
   margin-bottom: 10px;
   color: #000;
@@ -33,10 +39,11 @@ ol {
 
 li {
   margin-left: 40px;
+  margin-bottom: 15px;
 }
 
 strong {
-  color: #000;
+  color: #FF8B42;
 }
 
 .preview {
@@ -49,41 +56,56 @@ strong {
   }
 }
 
+// button {
+//   width: auto;
+//   height: 2em;
+
+// }
+
 /* ============================== HEADER ==================================== */
 /* ============================== HEADER ==================================== */
 
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   border-bottom: #a0a0a0 3px solid;
   margin-bottom: 50px;
+  padding: 10px 50px 15px 0px;
 }
 
 .header__logo {
   width: 115px;
   height: 115px;
+  transition: all .3s;
 
   & img {
     width: 100%;
     height: 100%;
+  }
+
+  &:hover {
+    transform: scale(1.15);
+    transition: all .3s;
   }
 }
 
 .header__title {
   font-size: 32px;
   font-weight: 700;
+  text-align: center;
+  margin: 0px auto;
 }
 
 .header__subtitle {
   font-size: 18px;
+  font-weight: 600;
+  flex-wrap: wrap;
 }
 
 /* ============================== MAIN ==================================== */
 /* ============================== MAIN ==================================== */
 
-.main {
-}
+.main {}
 
 .main__title {
   font-weight: 700;
@@ -96,14 +118,51 @@ strong {
   margin: 0 auto;
 }
 
-.boards {
+/* ============================== BOARDS ==================================== */
+/* ============================== BOARDS ==================================== */
+
+.boards {}
+
+.boards__filter-box {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.boards__filter-item {
+  margin-right: 25px;
+}
+
+.boards__filter-btn {
+  display: block;
+  padding: 20px 15px;
+  background-color: #d5a97f;
+  border-radius: 5px;
+  color: #383535;
+  font-weight: 700;
+  transition: all .3s;
+
+  &:hover {
+    background-color: #9E6B4E;
+    color: #FFF6EE;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  }
+}
+
+.boards__filter-btn--active {
+  background-color: #9E6B4E;
+  color: #FFF6EE;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.boards__body {}
+
+.boards__list {
   display: grid;
   grid-template: repeat(2, 1fr) / repeat(3, 1fr);
   font-weight: 700;
 }
 
-.board {
-}
+.boards__list-item {}
 
 .board__link {
   display: flex;
@@ -120,12 +179,12 @@ strong {
 }
 
 .board__link:hover .board__title {
-  color: #ea5d00;
+  color: #FF8B42;
   transition: all .3s;
 }
 
-.board__img {
-}
+.board__img {}
+
 .board__title {
   font-size: 20px;
   margin-top: 15px;
@@ -135,16 +194,57 @@ strong {
 /* ============================== DESCRIPTION ==================================== */
 
 .description {
-  background-color: #eff3f6;
+  background-color: #F2ECFF;
   padding: 25px 20px 40px;
+  border-radius: 5px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+  & strong {
+    color: #FF8B42;
+  }
+}
+
+.acc__item {
+  background-color: #e0e0e0;
+  border-radius: 3px;
+  margin-bottom: 25px;
+}
+
+.acc__item-link {
+  display: block;
+  padding: 20px 15px;
+  width: 100%;
+  height: 100%;
+}
+
+.acc__head {
+  position: relative;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.acc__item-link .acc__head:after {
+  content: "×";
+  color: #161616;
+  font-size: 2rem;
+  line-height: 1rem;
+  transform: rotate(-45deg);
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: color ease 2s, transform ease .3s;
+}
+
+.acc__item-link--active .acc__head:after {
+  transform: rotate(90deg);
+  color: #FF8B42;
+  transition: color ease 2s, transform ease 1s;
 }
 
 /* ============================== FOOTER ==================================== */
 /* ============================== FOOTER ==================================== */
 
-.footer {
-
-}
+.footer {}
 
 .footer__low {
   color: #999;
